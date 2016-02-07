@@ -5,12 +5,8 @@
   "main": "dist/react-skycons.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint ./",
     "build": "babel src/react-skycons.js --out-file dist/react-skycons.js",
-    "prepublish": "npm run build",
-    "prebuild": "npm run lint",
-    "preinstall": "npm run prepublish",
-    "example": "npm run build && webpack example/index.js --config example/webpack.config.js --output-path example/assets"
+    "preinstall": "npm run build",
   },
   "author": "Fong Kuanghuei <waneblade@gmail.com>",
   "homepage": "http://roadmanfong.github.io/react-skycons/",
