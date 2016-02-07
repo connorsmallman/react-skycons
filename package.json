@@ -9,6 +9,7 @@
     "build": "babel src/react-skycons.js --out-file dist/react-skycons.js",
     "prepublish": "npm run build",
     "prebuild": "npm run lint",
+    "preinstall": "npm run prepublish",
     "example": "npm run build && webpack example/index.js --config example/webpack.config.js --output-path example/assets"
   },
   "author": "Fong Kuanghuei <waneblade@gmail.com>",
