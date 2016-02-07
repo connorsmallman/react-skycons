@@ -1,8 +1,9 @@
 import React from 'react';
+import { findDOMNode } from 'react-dom';
+
 const Skycons = require('skycons')(window);
 
-const ReactSkycons = React.createClass({
-
+export default React.createClass({
   propTypes: {
     color: React.PropTypes.string,
     autoplay: React.PropTypes.bool,
@@ -34,19 +35,19 @@ const ReactSkycons = React.createClass({
   },
 
   componentDidMount() {
-    this.state.skycons.add(React.findDOMNode(this), Skycons[this.props.icon]);
+    this.state.skycons.add(findDOMNode(this), Skycons[this.props.icon]);
     if(this.props.autoplay){
       this.state.skycons.play();
     }
   },
 
   componentWillReceiveProps(nextProps) {
-   this.state.skycons.set(React.findDOMNode(this), Skycons[nextProps.icon]);
+   this.state.skycons.set(findDOMNode(this), Skycons[nextProps.icon]);
   },
 
-  componentWillUnmount: function componentWillUnmount() {
+  componentWillUnmount() {
     this.state.skycons.pause();
-    this.state.skycons.remove(React.findDOMNode(this));
+    this.state.skycons.remove(findDOMNode(this));
   },
 
   play() {
@@ -63,10 +64,11 @@ const ReactSkycons = React.createClass({
       props[prop] = this.props[prop];
     }
     delete props.autoplay;
+
+    console.log(props);
+
     return (
       <canvas {...props} />
     );
   }
 });
-
-export default ReactSkycons;
