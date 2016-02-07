@@ -5,8 +5,7 @@
   "main": "dist/react-skycons.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "browserify src/react-skycons.js -o dist/react-skycons.js -t [ babelify ]",
-    "postinstall": "build"
+    "build": "browserify src/react-skycons.js -o dist/react-skycons.js -t [ babelify ]"
   },
   "author": "Fong Kuanghuei <waneblade@gmail.com>",
   "homepage": "http://roadmanfong.github.io/react-skycons/",
